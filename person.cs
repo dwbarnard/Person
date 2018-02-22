@@ -75,7 +75,7 @@ namespace Person
 				{
 					oldestSingle = this;
 				}
-				if (( YoungestSingle == null) || (Age < youngestSingle.Age))
+				if (( youngestSingle == null) || (Age < youngestSingle.Age))
 				{
 					youngestSingle = this;
 				}
@@ -96,53 +96,17 @@ namespace Person
 			return calculatedAverageAge;
 		}
 
-		public static Person YoungestSingle
-		{
-			get
-			{
-				return youngestSingle;
-			}
-			private set
-			{
-				youngestSingle = value;
-			}
-		}
+		public static Person YoungestSingle { get; set; }
+	
 
-		public static Person YoungestMarried
-		{
-			get
-			{
-				return youngestMarried;
-			}
-			private set
-			{
-				youngestMarried = value;
-			}
-		}
+		public static Person YoungestMarried { get; set; }
 
-		public static Person OldestSingle
-		{
-			get
-			{
-				return oldestSingle;
-			}
-			private set
-			{
-				oldestSingle = value;
-			}
-		}
 
-		public static Person OldestMarried
-		{
-			get
-			{
-				return oldestMarried;
-			}
-			private set
-			{
-				oldestMarried = value;
-			}
-		}
+		public static Person OldestSingle { get; set; }
+
+		
+		public static Person OldestMarried { get; set; }
+
 
 		public static double AverageAge
 		{
@@ -186,13 +150,13 @@ namespace Person
 		public static void DisplayStaticVars()
 		{
 			Console.WriteLine();
-			if (OldestSingle != null)
+			if (oldestSingle != null)
 			{
 				Console.WriteLine("OLDEST SINGLE\t\t:  " + oldestSingle.FirstName + " " + oldestSingle.LastName);
 			}
 			if (youngestSingle != null)
 			{
-				Console.WriteLine("YOUNGEST SINGLE\t\t:  " + youngestSingle.FirstName + " " + YoungestSingle.LastName);
+				Console.WriteLine("YOUNGEST SINGLE\t\t:  " + youngestSingle.FirstName + " " + youngestSingle.LastName);
 			}
 			if (oldestMarried != null)
 			{
